@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Infection</title>
+		<meta name="description" content="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 🧩 &amp;nbsp; This mix of topics probably seems chaotic, but they are all clues...  &lt;br /&gt; &amp;nbsp; &lt;br /&gt;
+I have records of three positive chest X-rays for TB before I was three. I was tested for brucellosis (bovine tuberculosis), apparently positive since I was then X-rayed again for that.">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="Psychoros">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img {
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">Psychoros</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About</a></li>
+					<li class="nav-item"><a href="/feed/feed.xml">Feed</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			<heading-anchors>
+				
+<h1 id="infection">Infection</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="1950-03-13">13 March 1950</time></li>
+	<li><a href="/tags/parents/" class="post-tag">Parents</a>, </li>
+	<li><a href="/tags/tuberculosis/" class="post-tag">Tuberculosis</a>, </li>
+	<li><a href="/tags/thefarm/" class="post-tag">TheFarm</a>, </li>
+	<li><a href="/tags/dentist/" class="post-tag">Dentist</a>, </li>
+	<li><a href="/tags/tonsils/" class="post-tag">Tonsils</a>, </li>
+	<li><a href="/tags/accessorynerve/" class="post-tag">AccessoryNerve</a></li>
+</ul>
+
+<p>  <br></p>
+<picture><source type="image/avif" srcset="/.11ty/image/?src=content%2Fblog%2Finfection%2Fbacteria-border-770-35.jpg&width=770&format=avif&via=transform 770w"><source type="image/webp" srcset="/.11ty/image/?src=content%2Fblog%2Finfection%2Fbacteria-border-770-35.jpg&width=770&format=webp&via=transform 770w"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fblog%2Finfection%2Fbacteria-border-770-35.jpg&width=770&format=jpeg&via=transform" alt="Long narrow stripe of colorful cartoon germs." width="770" height="35"></picture>
+<p>Infections came up often. I have records of three positive chest X-rays for TB before I was three. I was tested for brucellosis (bovine tuberculosis), apparently positive since I was then X-rayed again for that. Of the antibiotics, only the sulfonamides were common then. I'd received &quot;sulfa&quot; when my mother's TB was discovered, but it was reportedly ineffective against TB or brucellosis, so maybe they suspected something else on top of those. A 1937 paper describes treating brucellosis with IV mercurochrome, or with fever induced by brucellin &quot;vaccine&quot;, as more effective, but I definitely did not undergo that. Penicillin arrived about the same time I did, but there is no record of my ever receiving any.</p>
+<p>I don't consciously remember, but I'd be quite surprised if I was not exposed to infected milk and meat on my grandfather's farm, as well as airborne infection. My grandfather and mother both had pulmonary #Tuberculosis. My skin tests have always been positive - but the skin test responds to both &quot;human&quot; and bovine tuberculosis, so that proves nothing about whether my tonsil and gland infections were tubercular. I've never been diagnosed with active pulmonary TB, though doctors argued back and forth about it for my first year of college.</p>
+<p>I just learned about Tuberculous Cervical Adenitis from a 1923 paper. Tuberculosis from infected milk enters the body through the tonsils and adenoids, and spreads to all the nearby glands in the neck. A healthy body can fight this off, but a reservoir of infection like a rotten tooth can provide more threat than the immune system can handle. Once the deeper glands are tuberculous, their boundaries are poorly defined. And &quot;There is no satisfactory landmark or method of identifying the [ spinal #AccessoryNerve ] with certainty.&quot; (That will become a critical factor when they remove my #Tonsils !)
+  <br></p>
+<p>STONE, J. S. (1923). Tuberculous Cervical Adenitis in Children. The Boston Medical and Surgical Journal, 188(9), 272-275. doi:10.1056/nejm192303011880907 <br>
+<a href="https://sci-hub.se/10.1056/NEJM192303011880907#">https://sci-hub.se/10.1056/NEJM192303011880907#</a>  (Page 274, right column)
+<br></p>
+<p>My primitive family #Dentist believed filling cavities in &quot;baby&quot; teeth was unnecessary, and encouraged my parents to simply allow them to rot away on their own. I spent years of my childhood with deep cavities in the center of each of my solidly anchored original molars, a disgusting taste and smell, and undoubtedly the reservoir of infection that kept my tonsils and glands swollen. It was so bad I kept a bent paper clip in my pocket at all times, and would use it not only to dislodge trapped food, but to dig the painfully exposed parts of the nerves out of the roots of the hollowed out teeth. Better a few moments of blinding intentional pain than not being able to chew at all...</p>
+<p>  <br></p>
+<p>History of antibiotics:
+<a href="https://www.reactgroup.org/toolbox/understand/antibiotics/development-of-antibiotics-as-medicines/">https://www.reactgroup.org/toolbox/understand/antibiotics/development-of-antibiotics-as-medicines/</a></p>
+<p>Pre-antibiotic treatment for brucellosis or &quot;undulant fever&quot;: <br>
+ERVIN, C. E. (1937). THE DIAGNOSIS AND TREATMENT OF UNDULANT FEVER. Journal of the American Medical Association, 109(24), 1966. doi:10.1001/jama.1937.02780500022008
+<a href="https://sci-hub.se/10.1001/jama.1937.02780500022008">https://sci-hub.se/10.1001/jama.1937.02780500022008</a></p>
+<p>(Sci-Hub may show a word Captcha with only Russian cues - just type the letters and press Enter.)</p>
+
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/my-origin/">My Origin 🎉</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
+		</footer>
+
+		<!-- This page `/blog/infection/` was built on 2024-11-26T01:10:28.908Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+	</body>
+</html>

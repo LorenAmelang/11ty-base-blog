@@ -27,7 +27,7 @@ export default async function(eleventyConfig) {
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
 	// Watch content images for the image pipeline.
-	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg,jpg}");
 
 	// Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
 	// Adds the {% css %} paired shortcode
@@ -59,15 +59,15 @@ export default async function(eleventyConfig) {
 		},
 		collection: {
 			name: "posts",
-			limit: 10,
+			limit: 16,
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "Psychoros",
+			subtitle: "The dancing ground of the soul",
+			base: "https://www.psychoros.com/",
 			author: {
-				name: "Your Name"
+				name: "Loren Amelang"
 			}
 		}
 	});
@@ -88,6 +88,15 @@ export default async function(eleventyConfig) {
 			decoding: "async",
 		}
 	});
+
+
+	// Canonical - 241124LA
+import metagen from 'eleventy-plugin-metagen';
+
+export default function (eleventyConfig) {
+    eleventyConfig.addPlugin(metagen);
+};
+
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
